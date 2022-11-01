@@ -1,19 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
-import Navbar from './components/Navbar';
-import Main from './components/Main';
-import Header from './components/Header'
-import Footer from './components/Footer'
-import ItemListContainer from './components/componentsSecondary/ItemListContainer';
+import Navbar from './components/navbar/Navbar';
+import Main from './components/main/Main';
+import Header from './components/header/Header'
+import Footer from './components/footer/Footer'
+import {BrowserRouter,Routes, Route} from 'react-router-dom'
+import ItemListContainer from './components/componentsSecondary/ItemListContainer'
+import ItemDetailContainer from './components/main/ItemDetailContainer'
 function App() {
   return (
-    <>
-      <Navbar saludo='FutTransfer' edad={28}/>
-      <ItemListContainer greeting='¡Bienvenidos a FuTransfer!'/>
+    <BrowserRouter>
+      <Navbar saludo='FutTransfer' edad={28} nombre ='santi'/>
       <Header/>
-      <Main/>
+      <Routes>
+        
+      <Route path='/' element={<ItemListContainer greeting='Bienvenidos a Birrex'/>}/> 
+      <Route
+        path='/detail/:idProd' element={<ItemDetailContainer/>}
+      />
+      <Route path='/category/:categoryName' element={<ItemListContainer/>}/>
+      </Routes>
       <Footer/>
-    </>
+    </BrowserRouter>
   );
 }
 export default App;
