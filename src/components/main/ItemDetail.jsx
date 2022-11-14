@@ -1,17 +1,30 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
 import ItemCount from '../componentsSecondary/ItemCount'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import { useContext } from 'react'
+import { CartContext } from '../../contexts/CartContext'
 const ItemDetail = ({item}) => {
 
-  return (
+    const {addToCart} = useContext(CartContext);
+    const [cantidad, setCantidad] = useState (0)
+    const onAdd = (qty) => /* ese qty equivale al parametro Cantidad q esta puesto en ItemCount, el hijo le paso al padre el parametro, pero le pones otro nombre para
+    que no se pise con el nombre cantidad de este useState */  {
+        console.log(qty);
+        setCantidad(qty)   
+        addToCart(item,qty) 
+    }
+    
+ return (
+    
     <div className='fontFamily '>
         <h4>ItemDetail</h4>
         <div className="row">
             <div className="col-sm-2 p-2 bg-warning rounded">
                 <img src={item.img} className="rounded imgResp" alt={item.title} />
                 <p className='mt-1 fw-bold'>
-                    {item.title}
+                {item.title}
+                    
                 </p>
                 <p>
                     Tipo: {item.category}
@@ -29,10 +42,26 @@ const ItemDetail = ({item}) => {
                 <Link to='/' className='btn btn-secondary fontFamily'>Volver</Link>
                 </p>
             </div>
-            <div className="col-sm-2 mt-4">
-                <ItemCount stock = {item.stock}/>
-            </div>
-            
+                {
+                    cantidad === 0 
+                    //aca quiero q siga todo igual
+                    ? 
+                    <div className="col-sm-2 mt-4">
+                
+                    <ItemCount stock = {item.stock} onAdd={onAdd}/>
+
+                    </div> 
+                //de lo contrario
+                    :
+                    
+                    <div className="col-sm-2 mt-4">
+                        {/* <ItemCount/> */}
+                        <Link to='/cart'>
+                        <button>Ir al carrito</button>
+                        </Link>
+                        <div className='fw-bold fontFamily'>Total: {cantidad} {item.title}</div> {/* //aca tendrias q poner el {texto} con un nuevo use state */}
+                    </div>
+                }
         </div>
 
     </div>

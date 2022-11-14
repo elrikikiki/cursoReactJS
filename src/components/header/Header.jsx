@@ -1,6 +1,13 @@
+import Prueba from "../Prueba/Prueba"
+
 const Header = () => {
     return (
-        <h2 className="text-center text-white bg-dark">HEADER</h2>
+        <div className="text-center text-white bg-dark">HEADER
+        <div>
+        <Prueba/>
+        </div>
+        </div>
+        
     )
 }
 export default Header

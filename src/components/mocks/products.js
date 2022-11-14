@@ -42,7 +42,7 @@ export const products = [
         category: 'Roja',
         liters: '1ltro',
         stock: 15,
-        img: 'http://d3ugyf2ht6aenh.cloudfront.net/stores/831/262/products/frambuesa1-a062555e9a897131de15625942574414-640-0.jpg'
+        img: 'http://d3ugyf2ht6aenh.cloudfront.net/stores/831/262/products/frambuesa1-a062555e9a897131de15625942574414-640-0.jpg',
     }
     
 ];

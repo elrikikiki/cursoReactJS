@@ -4,18 +4,18 @@ import Item from './Item'
 const ItemList = ({items}) => {
 
   return (
-    <div className='fw-bold row'>ItemList
-    <div className='col-4'>
+    <div className='row'>
         {
             items.map ((product) => {
                 return (
-                    <Item key={product.id} product={product}/> //aca le paso las props o propertys y la keys con su id, para poder diferenciar cada producto
-                )
+                  <div className='col-md-4' key={product.id}>
+                    <Item  product={product}/> {/* //aca le paso las props o propertys y la keys con su id, para poder diferenciar cada producto */}
+                    </div>
+                    )
             })
         }
-        
-    </div>
-    </div>
+    
+        </div>
   )
 }
 

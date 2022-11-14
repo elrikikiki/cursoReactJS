@@ -7,6 +7,7 @@ const Main = (props) => {
         iure similique veritatis quia, perspiciatis doloribus, eaque atque? Facere!
         <strong>{props.saludo}</strong>
         </p>
+        
         <div>
         
         </div>
