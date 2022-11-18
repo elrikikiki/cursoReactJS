@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 
-const ItemCount = ({stock,onAdd}) => {
-    const [cantidad, setCantidad] = useState(1) /* El USE STATE hace q se modifique el ESTADO de mi variable, q en este caso es cantidad */;
+const ItemCount = ({stock,onAdd,initial=1}) => { /* el initial lo arranco en 1 si o si, xq la cantidad q le pasaste todavia no se ejecutò. se ejecuta con el primer renderizado,
+o sea cuando se activa la funcion esa, sino antes te tira un undefined */
+    const [cantidad, setCantidad] = useState(initial) /* El USE STATE hace q se modifique el ESTADO de mi variable, q en este caso es cantidad */;
     /*  useEffect(() => {
         console.log("me renderizo ultimo");
     },[])
@@ -29,18 +30,14 @@ const ItemCount = ({stock,onAdd}) => {
         onAdd(cantidad) //asi le paso un valor de hijo a su padre
     }
 
-    /* cuando trabajamos con eventos, tengo que pasar una arrow function desde un Componente hacia otro, lo hago mediente Props, pero si o si tiene q ser una
+    /* cuando trabajamos con eventos, tengo que pasar una arrow function desde un Componente hacia otro, solo si trabajo con parametros, lo hago mediente Props, pero si o si tiene q ser una
     arrow, asi se genera un call back de parámetros : Clase 9 a partir de 1:20hs mira como lo explica */
   return (
     <div>
-        <div>
         <button className='btn btn-secondary mb-2' onClick={sumar}>+</button>
         <div className='mb-2 fontFamily'>{cantidad}</div>
         <button className='b-2 btn btn-secondary' onClick={restar}>-</button>
-        </div>
-       <button className=' mt-3 btn btn-warning fw-bold fontFamily mb-2' onClick={agregar}>Agregar al carrito</button>
-       
-       
+       <button className=' mt-3 btn btn-warning fw-bold fontFamily mb-2' onClick={agregar}>Agregar al carrito</button> 
     </div>
   )
 }

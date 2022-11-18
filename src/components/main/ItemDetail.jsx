@@ -6,7 +6,7 @@ import { useContext } from 'react'
 import { CartContext } from '../../contexts/CartContext'
 const ItemDetail = ({item}) => {
 
-    const {addToCart} = useContext(CartContext);
+    const {addToCart, cantidadDelProducto} = useContext(CartContext);
     const [cantidad, setCantidad] = useState (0)
     const onAdd = (qty) => /* ese qty equivale al parametro Cantidad q esta puesto en ItemCount, el hijo le paso al padre el parametro, pero le pones otro nombre para
     que no se pise con el nombre cantidad de este useState */  {
@@ -14,7 +14,7 @@ const ItemDetail = ({item}) => {
         setCantidad(qty)   
         addToCart(item,qty) 
     }
-    
+    const cantidad1= cantidadDelProducto(item.id) /* ese item.id es el parametro q pase en cartContext pa */
  return (
     
     <div className='fontFamily '>
@@ -48,14 +48,15 @@ const ItemDetail = ({item}) => {
                     ? 
                     <div className="col-sm-2 mt-4">
                 
-                    <ItemCount stock = {item.stock} onAdd={onAdd}/>
+                    <ItemCount stock = {item.stock} onAdd={onAdd} initial={cantidad1}/>
 
                     </div> 
                 //de lo contrario
                     :
                     
                     <div className="col-sm-2 mt-4">
-                        {/* <ItemCount/> */}
+                        
+                        {<ItemCount stock = {item.stock} onAdd={onAdd}/>}
                         <Link to='/cart'>
                         <button>Ir al carrito</button>
                         </Link>

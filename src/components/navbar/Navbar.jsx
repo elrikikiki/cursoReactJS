@@ -32,7 +32,7 @@ const Navbar = /* (props) */  ({edad,saludo,nombre}) => {
 
                     <div className="col-1">
                         <Link className='links fw-bold fontFamily' to='/cart'>
-                        <CartWidget/>
+                        <CartWidget/> {/* aca ponele un disabled si el carrito esta en cero, asi el usuario solo puede entrar a esa seccion cuando tenga algo */}
                         </Link>
                     </div>
                 </div>

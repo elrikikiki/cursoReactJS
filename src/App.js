@@ -7,6 +7,7 @@ import ItemListContainer from './components/componentsSecondary/ItemListContaine
 import ItemDetailContainer from './components/main/ItemDetailContainer'
 import Cart from './components/componentsSecondary/Cart';
 import CartProvider from './contexts/CartContext';
+import Checkout from './components/checkout/Checkout';
 /* export const Contexto = createContext(); esto tmb va en el otro Componente */ 
 function App() { //en app NO PUEDE HABER LOGICA, SOLO LAS RUTAS
   
@@ -26,6 +27,7 @@ function App() { //en app NO PUEDE HABER LOGICA, SOLO LAS RUTAS
             <Route path='/detail/:idProd' element={<ItemDetailContainer/>}/>
             <Route path='/category/:categoryName' element={<ItemListContainer/>}/>
             <Route path='/cart' element={<Cart/>}/>
+            <Route path='/checkout' element={<Checkout/>} />
         </Routes>
       </CartProvider>
       <Footer/>
