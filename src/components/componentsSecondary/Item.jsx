@@ -13,7 +13,6 @@ const Item = ({product}) => {
       <p className='text-center'>
       <Link to={`/detail/${product.id}`} className="btn btn-danger text-center">Ver detalle</Link>
       </p>
-       {/* //fijate si van los 2 puntitos */}
       
         </div>
       </div>

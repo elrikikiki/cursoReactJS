@@ -5,17 +5,12 @@ import { Link } from "react-router-dom";
 
 const Cart = () => {
 
-/*  const valorPasado=  useContext(Contexto)
-    console.log(valorPasado); */
     const {deleteAll,cart,totalPrecio,totalUnidades} = useContext(CartContext);
     console.log(cart);
     const totalUni = totalUnidades()
-     
-/*     const [total, setTotal] = useState(0) */
-    
+
     if (totalUni === 0) {
-        /* este es el early return, acordate siempre de ponerle el return al if este pa */
-        return /* ese return SIEMPRE */ <h1 className="container">Su carrito está vacío :/</h1>
+        return  <h1 className="container">Su carrito está vacío :/</h1>
         
     }
     return (

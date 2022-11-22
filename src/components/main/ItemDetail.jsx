@@ -8,8 +8,7 @@ const ItemDetail = ({item}) => {
 
     const {addToCart} = useContext(CartContext);
     const [cantidad, setCantidad] = useState (0)
-    const onAdd = (qty) => /* ese qty equivale al parametro Cantidad q esta puesto en ItemCount, el hijo le paso al padre el parametro, pero le pones otro nombre para
-    que no se pise con el nombre cantidad de este useState */  {
+    const onAdd = (qty) =>  {
         console.log(qty);
         setCantidad(qty)   
         addToCart(item,qty) 
@@ -44,14 +43,14 @@ const ItemDetail = ({item}) => {
             </div>
                 {
                     cantidad === 0 
-                    //aca quiero q siga todo igual
+
                     ? 
                     <div className="col-sm-2 mt-4">
                 
                     <ItemCount stock = {item.stock} onAdd={onAdd}/>
 
                     </div> 
-                //de lo contrario
+
                     :
                     
                     <div className="col-sm-2 mt-4">
@@ -64,7 +63,7 @@ const ItemDetail = ({item}) => {
                         <button className='mt-4'>Seguir comprando</button>
                         </Link>
                         
-                        <div className='fw-bold fontFamily'>Total: + {cantidad} {item.title}</div> {/* //aca tendrias q poner el {texto} con un nuevo use state */}
+                        <div className='fw-bold fontFamily'>Total: + {cantidad} {item.title}</div>
                     </div>
                 }
         </div>

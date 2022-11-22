@@ -8,18 +8,11 @@ import ItemDetailContainer from './components/main/ItemDetailContainer'
 import Cart from './components/componentsSecondary/Cart';
 import CartProvider from './contexts/CartContext';
 import Checkout from './components/checkout/Checkout';
-/* export const Contexto = createContext(); esto tmb va en el otro Componente */ 
-function App() { //en app NO PUEDE HABER LOGICA, SOLO LAS RUTAS
-  
- /*  const [ productoss, setProductoss ] = useState(products) traelo siempre asi lo convertimos en un estado
-  let nombre = "santi"
-  como acá no puede ir lógica acá en App, lo mismo q hice acá, lo voy a hacer en otro Componente
-  */
-  return ( //en App siempre voy a tener las rutas pa
 
+function App() { 
+  return ( 
     <BrowserRouter>
-     <CartProvider>{/* //aca le pase un valor a todos sus hijos */} {/* <CartContext.Provider> Pero ese cartContextProvider no me sirve xq el value me permite todavía pasarle 
-    lógica unicamente desde App, y eso no quiero. Clase 10 1:00hs */}
+     <CartProvider>
       <Navbar saludo='BIRREX' edad={28} nombre ='santi'/>
       <Header/>
         <Routes>

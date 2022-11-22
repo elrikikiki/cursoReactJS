@@ -30,7 +30,7 @@ const Form = () => {
     const handleMail2 = (e) => {
         return setMail2 (e.target.value)
     }
-    const enviarDatos = (e) => { /* este esta relacionado con el onSubmit, aestos son los datos q envio a mi base de datos(firestore) */
+    const enviarDatos = (e) => {
         e.preventDefault();
         const objOrden= {
             comprador: {
@@ -42,12 +42,12 @@ const Form = () => {
             },
             items: cart,
             total: totalCarrito,
-            date: serverTimestamp() /* le pongo la fecha que me da la base de datos, no la fecha de aca de react */
+            date: serverTimestamp()
             
         } 
         const orderCollection = collection(db, 'ordenes')
         if (mail===mail2) {
-            addDoc(orderCollection, objOrden) /* fijate que addDoc(agregar documento) es una promesa, pero tmb usa el metodo post, o sea q le envio algo al servidor, no uso el getDoc para esto */
+            addDoc(orderCollection, objOrden) 
     .then((res)=> {
         console.log(res);
         deleteAll()
@@ -71,7 +71,7 @@ const Form = () => {
         )  
     }
     
-    /* si pongo un if antes del return, lo q hace es que si mi condicion del if se cumple, se muestra ese id, sino se muestra el return de abajo */
+
   return (
     <div className='container'>
          <form action="" onSubmit={enviarDatos} >
@@ -80,7 +80,7 @@ const Form = () => {
             <input type="text" className='m-3' onChange={handleAddres} value={addres} placeholder="Dirección" name="direccion"/>
             <input type="mail" className='m-3' onChange={handleMail} value={mail} placeholder="Correo" name="mail"/>
             <input type="mail" className='m-3' onChange={handleMail2} value={mail2} placeholder="Correo2" name="mail2"/>
-            <button>Enviar</button> {/* ya si hay un boton dentro del form, ya se envian bien los datos, xq esta puesto el OnSubmit */}
+            <button>Enviar</button> 
         </form> 
     </div>
   )

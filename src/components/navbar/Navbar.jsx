@@ -1,11 +1,7 @@
 import { NavLink, Link } from "react-router-dom";
 import CartWidget from "../componentsSecondary/CartWidget";
-const Navbar = /* (props) */  ({edad,saludo,nombre}) => {
+const Navbar =   ({saludo}) => {
 
-   /*  const {productoss,nombre} = useContext(Contexto)
-    console.log(nombre);
-    console.log(productoss); */
-/* const {edad,saludo,nombre} = props esta es otra forma de destructuring, pero ese props tiene q estar escrito arriba */
     return (
         <div className="container-fluid bg-warning pt-2">
             <div className="container">
@@ -32,7 +28,7 @@ const Navbar = /* (props) */  ({edad,saludo,nombre}) => {
 
                     <div className="col-1">
                         <Link className='links fw-bold fontFamily' to='/cart'>
-                        <CartWidget/> {/* aca ponele un disabled si el carrito esta en cero, asi el usuario solo puede entrar a esa seccion cuando tenga algo */}
+                        <CartWidget/>
                         </Link>
                     </div>
                 </div>
