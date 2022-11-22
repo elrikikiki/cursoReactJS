@@ -1,9 +1,7 @@
 import ItemList from "./ItemList"
-import { getProducts } from "../mocks/products"
 import { useEffect } from "react"
 import { useState } from "react"
 import { useParams } from "react-router-dom"
-import Search from "./Search"
 import SyncLoader from "react-spinners/SyncLoader";
 import {getDocs, query, where} from 'firebase/firestore'
 import { collectionProd } from "../../firebaseConfig.jsx/firebase"
@@ -60,9 +58,7 @@ const ItemListContainer = ({greeting}) => {
     }
 
     return (
-        
         <div className="container">
-            <Search />
             <h3 className="col-3 text-center mb-5 fontFamily fw-bold">
             {greeting}
         </h3>

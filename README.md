@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Proyecto BIRREX - E-comerce 
+ El proyecto Birrex es una aplicación web E-commerce que vende cervezas de todo tipo, ya sean Golden, Roja y negra, con distintas variadades y sabores. Para el desarrollo del sitio se utilizó REACT JS, que ayudó a simplificar la lógica del mismo. Para el estilo se utilizó Bootstrap, con la idea de mejorar la experiencia del usuario. Como base de datos se implementó la plataforma de desarrolo de apps [Firebase](https://firebase.google.com/), en la cual  se almacenan: la información de cada producto, la compra y registro de información de usuario.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+![](https://d2r9epyceweg5n.cloudfront.net/stores/922/676/products/pinta-cerveza1-2c9b5304578098a62d16190350570698-1024-1024.png)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Librerías utilizadas
 
-### `npm test`
+-   [react-router-dom](https://reactrouter.com/en/main): fundamental para que el sitio web no se refresque o recargue por cada vez que el usuario transite de una categoría a otra.
+-   Firebase: almacenamiento de productos y datos de compra y comprador.
+-   React-spinners
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## VIDEO: Recorrido del usuario dentro de nuestro sitio
+![](./public/como-grabar-pantalla-windows-10-Buscar-con-Google-Google-Chrome-2022-11-22-10-34-31.gif)
 
-### `npm run build`
+## Pasos para utilizar el proyecto en tu PC
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1.  Clonar el repositorio
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+git clone https://github.com/elrikikiki/cursoReactJS
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Instalar las dependencias
 
-### `npm run eject`
+```
+npm install react-router-dom
+npm install react-spinners
+npm install firebase
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Correr el proyecto en tu navegador
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+cd my-app
+npm start
+```

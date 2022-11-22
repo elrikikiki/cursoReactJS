@@ -63,6 +63,7 @@ const CartProvider = ({children}) => {
         const copia = [...cart] /* no puedo hacer un for each de cart solo, por eso hago una copia, sino tendria q ser un map pero aca no te sirve */
         copia.forEach((prod) => {
             count= count + prod.qty;
+            
         })
         return count;
     }
@@ -74,11 +75,11 @@ const CartProvider = ({children}) => {
         })
         return count; /* no es recomendable hacer un reduce */
     }
-    const cantidadDelProducto = (id) => {
+   /*  const cantidadDelProducto = (id) => {
         const product = cart.find((prod)=> prod.id ===id)
-            return product?.qty /* ?optional change se llama ese simbolo, es cuando sabes q puede tirar undefined */
+            return product?.qty ?optional change se llama ese simbolo, es cuando sabes q puede tirar undefined 
         
-    }
+    } */
 
     console.log(cart);
     return (
@@ -90,7 +91,6 @@ const CartProvider = ({children}) => {
             mostrarCantidad, 
             totalUnidades, 
             totalPrecio,
-            cantidadDelProducto 
         }}> {/* ese cart ya va a tener todo resuelto xq la logica va antes de ese cart, de esa manera vas a estar pasando un estado con toda
         la logica "resulta" desde aca, dsp obvio se adapta a cada route o componente */}
             {children} {/* Esto vale toda mi aplicacion pa juju */}

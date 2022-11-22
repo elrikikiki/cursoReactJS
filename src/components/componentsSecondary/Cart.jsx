@@ -35,8 +35,9 @@ const Cart = () => {
                     }
                 </div>
                 <h3>TOTAL: ${totalPrecio()}</h3>
+                <Link to='/checkout'><button className="btn btn-warning">Comprar</button></Link>
             <button className="btn btn-success m-4" onClick={deleteAll}>Vaciar carrito</button>
-                    <button><Link to='/checkout'>Comprar</Link></button>
+                    
                 <div>
                 </div>
             </div>

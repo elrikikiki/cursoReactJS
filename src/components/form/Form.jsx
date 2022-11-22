@@ -9,15 +9,12 @@ const Form = () => {
     const {cart,totalPrecio, deleteAll} = useContext(CartContext)
     const totalCarrito= totalPrecio()
     const [orden, setOrden] = useState('')
-    /* const datos = (e) => {
-        e.preventDefault();
-        console.log(e.target.value);
-    }  */
     const [name, setName] = useState('')
     const [lastName, setLastName] = useState('')
     const [addres,setAddres] = useState('')
     const [mail, setMail] = useState('')
     const [mail2, setMail2] = useState('')
+   
     const handleName = (e) => {
         return setName(e.target.value) /* ese e.target.value es la forma de extraer los datos q el usuario pone en el input */
     }
@@ -49,7 +46,8 @@ const Form = () => {
             
         } 
         const orderCollection = collection(db, 'ordenes')
-    addDoc(orderCollection, objOrden) /* fijate que addDoc(agregar documento) es una promesa, pero tmb usa el metodo post, o sea q le envio algo al servidor, no uso el getDoc para esto */
+        if (mail===mail2) {
+            addDoc(orderCollection, objOrden) /* fijate que addDoc(agregar documento) es una promesa, pero tmb usa el metodo post, o sea q le envio algo al servidor, no uso el getDoc para esto */
     .then((res)=> {
         console.log(res);
         deleteAll()
@@ -60,11 +58,14 @@ const Form = () => {
     })
     .finally()
     } 
-    
+    else{
+        alert("Los mails no coinciden")
+    }
+        }
     if (orden) {
        return (
         <div className='container'>
-            <h3 >GRACIAS POR TU COMPRA, TU ORDEN DE SEGUIMIENTO ES: {orden}</h3>
+            <h3>Compra realizada, tu orden de seguimiento es: {orden}</h3>
             <Link to='/'><button> Volver al home</button></Link>
         </div> 
         )  

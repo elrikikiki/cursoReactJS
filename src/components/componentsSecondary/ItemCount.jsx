@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 
-const ItemCount = ({stock,onAdd,initial=1}) => { /* el initial lo arranco en 1 si o si, xq la cantidad q le pasaste todavia no se ejecutò. se ejecuta con el primer renderizado,
+const ItemCount = ({stock,onAdd}) => { /* el initial lo arranco en 1 si o si, xq la cantidad q le pasaste todavia no se ejecutò. se ejecuta con el primer renderizado,
 o sea cuando se activa la funcion esa, sino antes te tira un undefined */
-    const [cantidad, setCantidad] = useState(initial) /* El USE STATE hace q se modifique el ESTADO de mi variable, q en este caso es cantidad */;
+    const [cantidad, setCantidad] = useState(1) /* El USE STATE hace q se modifique el ESTADO de mi variable, q en este caso es cantidad */;
     /*  useEffect(() => {
         console.log("me renderizo ultimo");
     },[])
