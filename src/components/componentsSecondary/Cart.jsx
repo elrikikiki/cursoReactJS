@@ -5,38 +5,54 @@ import { Link } from "react-router-dom";
 
 const Cart = () => {
 
+/*  const valorPasado=  useContext(Contexto)
+    console.log(valorPasado); */
     const {deleteAll,cart,totalPrecio,totalUnidades} = useContext(CartContext);
     console.log(cart);
     const totalUni = totalUnidades()
-
+     
+/*     const [total, setTotal] = useState(0) */
+    
     if (totalUni === 0) {
-        return  <h1 className="container">Su carrito está vacío :/</h1>
+        /* este es el early return, acordate siempre de ponerle el return al if este pa */
+        return /* ese return SIEMPRE */ <div className="container fontFamily mt-5 mb-5">
+            <div className="row text-center justify-content-center">
+                <div className="col-md-2">
+                <p className="h5 fw-bold mb-4">Todavía no ha seleccionado ningún producto</p>
+                <Link to='/' className="sinSubrayado text-black bg-dark text-white p-1 rounded mt-3 ">Ir al catálogo</Link>
+                </div>
+            </div>
+            </div>
         
     }
     return (
-        <div className="container">
-           
-            <div className="fw-bold">
-                <h3> CARRITO DE COMPRAS</h3>
-                <div className="row mb-3">
+        <div className="container fontFamily">
+                <h3 className="mt-4 mb-4 text-center fw-bold"> SHOP</h3>
                     {
                     cart.map((prod) => {
                         return (
-                            <div className="col-md-3 mb-4">
+                            <div className="row mt-4 fontFamily">
                                 <CartSmall prod={prod}/>
                             </div>
                         )
                     })
                     }
-                </div>
-                <h3>TOTAL: ${totalPrecio()}</h3>
-                <Link to='/checkout'><button className="btn btn-warning">Comprar</button></Link>
-            <button className="btn btn-success m-4" onClick={deleteAll}>Vaciar carrito</button>
-                    
+                    <div className="row mt-4 mb-4">
+                    <div className="col-md-2 ">
+                    <h4 className="">TOTAL: ${totalPrecio()}.-</h4>
+                    </div>
+                    <div className="col-md-1 mb-4">
+                    <Link to='/checkout'>
+                    <button className="btn btn-danger">Comprar</button>
+                    </Link>
+                    </div>
+                    <div className="col-md-2 mb-4">
+                    <button className="btn btn-success " onClick={deleteAll}>Limpiar carrito</button>
+                    </div>
+                    </div>
                 <div>
                 </div>
             </div>
-        </div>
     )
 }
 

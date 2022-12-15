@@ -8,8 +8,8 @@ const ItemList = ({items}) => {
         {
             items.map ((product) => {
                 return (
-                  <div className='col-md-4 text-center' key={product.id}>
-                    <Item  product={product}/> 
+                  <div className='col-md-3 text-center mb-4' key={product.id}>
+                    <Item  product={product}/> {/* //aca le paso las props o propertys y la keys con su id, para poder diferenciar cada producto */}
                     </div>
                     )
             })

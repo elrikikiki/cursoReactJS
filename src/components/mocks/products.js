@@ -49,7 +49,8 @@ export const products = [
 export const getProducts = (categoryName) => {
     return new Promise ((res,rej) => {
         const productsFilters = products.filter((product) => product.category === categoryName);
-        const reference = categoryName ? productsFilters : products; 
+        const reference = categoryName ? productsFilters : products; /* en este caso si hace falta el if, xq itemListContainer abarca tanto todos los productos, como sus 
+        categorías, xq itemlistCont es el home como tmb una categoría, cumple 2 funciones */
         setTimeout(() => {
             res(reference)
         }, 600);
